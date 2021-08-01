@@ -42,21 +42,21 @@ class Menu:
 
     @staticmethod
     def intro_opcion(opcion):
-        retroceder_instruccion = f"Si deseas volver al menú principal escribe: {Color.ERROR}retroceder{Color.RESET}"
+        regresar_instruccion = f"Si deseas volver al menú principal escribe: {Color.ERROR}regresar{Color.RESET}"
         if opcion == 1:
             texto_corto = "Elegiste agregar un producto al inventario."
             texto_largo = f"""    A continuación elige la categoría que mejor se adapte al producto:
-    {retroceder_instruccion}
+    {regresar_instruccion}
     """
         if opcion == 2:
             texto_corto = "Elegiste sacar un producto del inventario."
             texto_largo = f"""    A continuación elige la opción que desees:
-    Si deseas volver al menú principal escribe: {Color.ERROR}retroceder{Color.RESET}
+    Si deseas volver al menú principal escribe: {Color.ERROR}regresar{Color.RESET}
     """
         if opcion == 3:
             texto_corto = "Elegiste revisar las existencias del inventario."
             texto_largo = f"""    A continuación elige la opción que desees:
-    Si deseas volver al menú principal escribe: {Color.ERROR}retroceder{Color.RESET}
+    Si deseas volver al menú principal escribe: {Color.ERROR}regresar{Color.RESET}
     """
 
         print(f"""
@@ -180,7 +180,7 @@ class Validacion:
         try:
             opcion = input(
                 f"{Color.EXITO}Agregar producto{Color.RESET} > Elija una categoría: ")
-            if opcion == 'retroceder':
+            if opcion == 'regresar':
                 Menu.menu_de_entrada()
                 return opcion
 
@@ -202,7 +202,7 @@ class Validacion:
         try:
             opcion = input(
                 f"{Color.EXITO}Sacar producto{Color.RESET} > Elija una opción: ")
-            if opcion == 'retroceder':
+            if opcion == 'regresar':
                 Menu.menu_de_entrada()
                 return opcion
 
@@ -224,7 +224,7 @@ class Validacion:
         try:
             opcion = input(
                 f"{Color.EXITO}Existencias{Color.RESET} > Elija una opción: ")
-            if opcion == 'retroceder':
+            if opcion == 'regresar':
                 Menu.menu_de_entrada()
                 return opcion
 
@@ -290,7 +290,7 @@ class Validacion:
         try:
             opcion = input(
                 f"{Color.EXITO}Existencias{Color.RESET} > Elija una opción: ")
-            if opcion == 'retroceder':
+            if opcion == 'regresar':
                 Menu.menu_de_entrada()
                 return opcion
 

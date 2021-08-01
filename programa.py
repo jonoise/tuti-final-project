@@ -21,8 +21,8 @@ def EjecutarPrograma():
             while True:
                 indice_categoria = Validacion.validar_categoria()
 
-                # si la opción que usuario ingresa es "retroceder"
-                if indice_categoria == 'retroceder':
+                # si la opción que usuario ingresa es "regresar"
+                if indice_categoria == 'regresar':
                     break
 
                 if indice_categoria:
@@ -73,9 +73,10 @@ def EjecutarPrograma():
         if OPCION == 2:
             Menu.intro_opcion(OPCION)
             Menu.sacar_producto_opciones()
+            
             while True:
                 opcion_sacar_producto = Validacion.validar_salida_de_producto()
-                if opcion_sacar_producto == "retroceder":
+                if opcion_sacar_producto == "regresar":
                     break
 
                 if opcion_sacar_producto:
@@ -86,6 +87,8 @@ def EjecutarPrograma():
                     if id == 'buscar':
                         print(
                             "\n\tA continuación copie el ID del producto.\n")
+                        print(
+                            "\n\tY ejecute la opción 1 de nuevo.\n")
                         inventario.despleglar_productos()
                         print('\n')
                     else:
@@ -96,7 +99,7 @@ def EjecutarPrograma():
                         else:
                             Menu.mostrar_informacion_producto(producto)
                             cantidad_salida = int(input(
-                                '\t\nElija la cantidad para la salida'))
+                                '\t\nElija la cantidad para la salida: '))
                             producto_actualizado = inventario.sacar_productos(
                                 producto, cantidad_salida)
 
@@ -113,7 +116,7 @@ def EjecutarPrograma():
 
             while True:
                 opcion_existencia = Validacion.validar_existencia()
-                if opcion_existencia == 'retroceder':
+                if opcion_existencia == 'regresar':
                     break
 
                 if opcion_existencia:
@@ -147,8 +150,8 @@ def EjecutarPrograma():
                             tipo_seleccionado = Validacion.validar_tipos(
                                 tipos_validos
                             )
-                            # si la opción que usuario ingresa es "retroceder"
-                            if tipo_seleccionado == 'retroceder':
+                            # si la opción que usuario ingresa es "regresar"
+                            if tipo_seleccionado == 'regresar':
                                 break
 
                             if tipo_seleccionado:
@@ -159,7 +162,6 @@ def EjecutarPrograma():
                                 Menu.mostrar_cantidad_por_tipo(
                                     tipo_seleccionado, cantidad_por_tipo
                                 )
-                                Menu.existencias_opciones()
                         else:
                             print(
                                 f'{Color.ERROR}El inventario está vacío. Ingrese un producto primero.{Color.RESET}')
